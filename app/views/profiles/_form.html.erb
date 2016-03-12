@@ -1,19 +1,29 @@
 <%= simple_form_for(@profile) do |f| %>
   <%= f.error_notification %>
-
+  <br>
   <div class="form-inputs">
-    <%= f.input :first_name %>
-    <%= f.input :last_name %>
-    <%= f.input :profile_pic %>
-    <%= f.input :bio %>
+    <div class="row">
+      <div class="col-md-6">
+    <%= f.input :first_name, placeholder: "First Name" %>
+      </div>
+      <div class="col-md-6">
+    <%= f.input :last_name, placeholder: "Last Name" %>
+  </div>
+</div>
+  Profile Pic <br>
+    <label class="file">
+      <%= f.file_field :profile_pic %>
+      <span class="file-custom"></span>
+    </label>
+    <%= f.input :bio, placeholder: "A bit about you" %>
     <%= f.input :dob, as: :date, start_year: Date.today.year - 90,
                              end_year: Date.today.year - 12, label: 'Date of Birth' %>
-    <%= f.input :street %>
-    <%= f.input :suburb %>
-    <%= f.input :city %>
+    <%= f.input :street, placeholder: "123 Street Rd" %>
+    <%= f.input :suburb, placeholder: "Suburb Town" %>
+    <%= f.input :city, placeholder: "Big City" %>
     <%= f.input :country, priority: ['Australia'] %>
     <%= f.input :gender, as: :radio_buttons, collection: ['Male', 'Female'] %>
-    <%= f.input :phone %>
+    <%= f.input :phone, placeholder: "Phone Number" %>
   </div>
 
   <div class="form-actions">

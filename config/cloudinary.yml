@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: technolegem
+  api_key: '763634614283599'
+  api_secret: 7e90uFpKXKlDP5glo7SFnUhneHc
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: technolegem
+  api_key: '763634614283599'
+  api_secret: 7e90uFpKXKlDP5glo7SFnUhneHc
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: technolegem
+  api_key: '763634614283599'
+  api_secret: 7e90uFpKXKlDP5glo7SFnUhneHc
+  enhance_image_tag: true
+  static_image_support: false
