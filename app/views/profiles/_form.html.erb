@@ -2,17 +2,17 @@
   <%= f.error_notification %>
 
   <div class="form-inputs">
-    <%= f.association :user %>
     <%= f.input :first_name %>
     <%= f.input :last_name %>
     <%= f.input :profile_pic %>
     <%= f.input :bio %>
-    <%= f.input :dob %>
+    <%= f.input :dob, as: :date, start_year: Date.today.year - 90,
+                             end_year: Date.today.year - 12, label: 'Date of Birth' %>
     <%= f.input :street %>
     <%= f.input :suburb %>
     <%= f.input :city %>
-    <%= f.input :country %>
-    <%= f.input :gender %>
+    <%= f.input :country, priority: ['Australia'] %>
+    <%= f.input :gender, as: :radio_buttons, collection: ['Male', 'Female'] %>
     <%= f.input :phone %>
   </div>
 

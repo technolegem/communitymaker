@@ -7,6 +7,7 @@ gem 'devise'
 gem 'simple_form'
 gem 'country_select'
 gem 'bootstrap'
+#need to setup in js, can delete coffee files, and all other css  and .coffee files, need to use scss for the bootstrap gem.
 # Use sqlite3 as the database for Active Record
 gem 'sqlite3'
 # Use SCSS for stylesheets
