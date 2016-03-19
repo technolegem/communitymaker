@@ -1,0 +1,41 @@
+<h1>Admin</h1>
+
+<h1>Users</h2>
+  <table class='table'>
+    <tr>
+      <th>Name</th>
+      <th>Email</th>
+      <th>Phone</th>
+      <th>Admin</th>
+    </tr>
+<% @users.each do |user| %>
+    <tr>
+      <!--Link to user profile page -->
+      <td>
+        <% if user.profile %>
+          <%= link_to user.profile.full_name, profile_path(user.profile) %>
+        <% end %>
+      </td>
+      <td><%= user.email %></td>
+      <td>
+        <% if user.profile %>
+          <%= user.profile.phone %>
+        <% end %>
+      </td>
+      <!--Bonus points for a button that makes the user an admin -->
+      <td>
+        <% unless  user.has_role? :admin %>
+          <%= link_to 'Make Admin', 'make_admin/' + user.id.to_s, class: 'btn btn-info' %></td>
+        <% end %>
+      <!--using the ruby asset path, we are linking make admin to a new CRUD, that we will need to presecribe in our routes file -->
+      <!--delete user -->
+
+      <td>
+        <% if user == current_user %>
+          <%= link_to 'Edit', edit_user_registration_path(user) %>
+        <% else %>
+          <%= link_to 'Delete User', user_path(user), method: :delete, data: { confirm: 'Are you sure?'} %>
+      <!-- user_path(user) can also be written as user -->
+        <% end %>
+      </td>
+<% end %>

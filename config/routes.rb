@@ -1,4 +1,10 @@
 Rails.application.routes.draw do
+  get 'admin', to: 'pages#admin'
+
+  get 'pages', to: 'pages#contact'
+
+  get 'about', to: 'pages#about'
+
   resources :photos
   resources :posts
   resources :events
@@ -7,6 +13,9 @@ Rails.application.routes.draw do
   resources :profiles
   devise_for :users
   get 'home/index'
+  resources :users, only: :destroy
+  get 'make_admin/:id', to: 'users#make_admin'
+  #method that isn't prescribed in CRUD
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

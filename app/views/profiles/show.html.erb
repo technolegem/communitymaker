@@ -1,8 +1,8 @@
 <p id="notice"><%= notice %></p>
   <div class="row">
-    <div class="col-md-5">
+    <div class="col-md-4">
       <div class="card">
-        <img class="card-img-top" src="<%= @profile.profile_pic %>" alt="Card image cap" class="img-fluid">
+        <img class="card-img-top" src="<%= @profile.profile_pic %>" alt="Card image cap" width="100%" height="auto" >
       <div class="card-block">
         <h3 class="card-title"><%= @profile.full_name %></h3>
           <p class="card-text"><br><h5>A bit about you</h5><%= @profile.bio %></p>
@@ -10,7 +10,8 @@
   <ul class="list-group list-group-flush">
       <li class="list-group-item">Gender: <%= @profile.gender %></li>
       <li class="list-group-item">Date of Birth: <%= @profile.dob.strftime('%d, %b, %y') %></li>
-      <li class="list-group-item">Phone Number:<%= @profile.phone %></li>
+      <li class="list-group-item">Email: <%= @profile.user.email %></li>
+      <li class="list-group-item">Phone Number: <%= @profile.phone %></li>
       <li class="list-group-item">Street: <%= @profile.street %></li>
       <li class="list-group-item">Suburb: <%= @profile.suburb %></li>
       <li class="list-group-item">City: <%= @profile.city %></li>
