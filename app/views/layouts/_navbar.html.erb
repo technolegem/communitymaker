@@ -15,6 +15,10 @@
       <li class="nav-item <%= 'active' if current_page?(pages_path) %>">
         <a class="nav-link" href="/pages">Contact</a>
       </li>
+      <li class="nav-item <%= 'active' if
+      current_page?(groups_path) %>">
+      <a class="nav-link" href="/groups">Groups</a>
+      </li>
       <% if user_signed_in? %>
         <% if current_user.profile %>
           <li class="nav-item">

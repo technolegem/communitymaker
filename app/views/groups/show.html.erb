@@ -1,34 +1,13 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Group category:</strong>
-  <%= @group.group_category %>
-</p>
+<li class="list-group-item">Group category: <%= @group.group_category %></li>
+<li class="list-group-item">Name: <%= @group.name %></li>
+<li class="list-group-item">Description: <%= @group.description %></li>
+<li class="list-group-item">Logo: <%= @group.logo %></li>
+<li class="list-group-item">Banner: <%= @group.banner %></li>
+<li class="list-group-item">Owner: <%= @owner_profile.full_name  %></li>
+<!--bad practice to make db calls in the view -->
 
-<p>
-  <strong>Name:</strong>
-  <%= @group.name %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @group.description %>
-</p>
-
-<p>
-  <strong>Logo:</strong>
-  <%= @group.logo %>
-</p>
-
-<p>
-  <strong>Banner:</strong>
-  <%= @group.banner %>
-</p>
-
-<p>
-  <strong>Owner:</strong>
-  <%= @group.owner_id %>
-</p>
 
 <%= link_to 'Edit', edit_group_path(@group) %> |
 <%= link_to 'Back', groups_path %>
